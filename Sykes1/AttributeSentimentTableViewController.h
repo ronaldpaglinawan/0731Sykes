@@ -15,4 +15,8 @@
 
 @property (strong, nonatomic) NSMutableArray *chosenItemsArray;
 
+@property (strong, nonatomic) NSMutableArray *mediaItemsArray;
+@property (strong, nonatomic) NSMutableArray *mentionItemsArray;
+@property (strong, nonatomic) NSMutableArray *topicItemsArray;
+@property (strong, nonatomic) NSMutableArray *attributeItemsArray;
 @end

@@ -31,11 +31,10 @@
     
     _productSentimentArray = [NSArray arrayWithObjects:@"Savings", @"Loans", @"Credit Cards", @"Mortagages", @"Investment", @"Insurance", nil];
     
-    
-    NSLog(@"chosenItemsArray value at ProductSentimentTableViewController: %@", _chosenItemsArray);
-    
     // set itemCounter to 0
     itemCounter = 0;
+
+    _productItemsArray = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,14 +47,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [_productSentimentArray count];
 }
@@ -89,6 +86,8 @@
         // save current cell textLabel value to chosenItemsArray:
         [_chosenItemsArray addObject:cell.textLabel.text];
         
+        [_productItemsArray addObject:cell.textLabel.text];
+        
         itemCounter++;
     }
     
@@ -113,6 +112,13 @@
         // open KeyFindingsTableViewController
         KeyFindingsTableViewController *keyFindingsVC = [segue destinationViewController];
         [keyFindingsVC setChosenItemsArray:_chosenItemsArray];
+        
+        [keyFindingsVC setMediaItemsArray:_mediaItemsArray];
+        [keyFindingsVC setMentionItemsArray:_mentionItemsArray];
+        [keyFindingsVC setTopicItemsArray:_topicItemsArray];
+        [keyFindingsVC setAttributeItemsArray:_attributeItemsArray];
+        [keyFindingsVC setProductItemsArray:_productItemsArray];
+        
     }
 }
 

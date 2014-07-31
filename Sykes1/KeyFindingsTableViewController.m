@@ -33,11 +33,11 @@
     [super viewDidLoad];
     
     _keyFindingsArray = [NSArray arrayWithObjects:@"Social Media Presence", @"Listening Activity", @"Brand Management", @"Further Research", nil];
-    
-    NSLog(@"chosenItemsArray value at KeyFindingsTableViewController: %@", _chosenItemsArray);
-    
+        
     // set itemCounter to 0
     itemCounter = 0;
+    
+    _keyFindingItemsArray = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,10 +90,9 @@
         // save current cell textLabel value to chosenItemsArray:
         [_chosenItemsArray addObject:cell.textLabel.text];
         
-        itemCounter++;
+        [_keyFindingItemsArray addObject:cell.textLabel.text];
         
-       // NSLog(@"array size: %i", _chosenItemsArray.count);
-       // NSLog(@"chosenItemsArray: %@", _chosenItemsArray);
+        itemCounter++;
         
     }
     
@@ -116,6 +115,14 @@
         // open KeyFindingsTableViewController
         PDFViewController *pdfVC = [segue destinationViewController];
         [pdfVC setChosenItemsArray:_chosenItemsArray];
+        
+        [pdfVC setMediaItemsArray:_mediaItemsArray];
+        [pdfVC setMentionItemsArray:_mentionItemsArray];
+        [pdfVC setTopicItemsArray:_topicItemsArray];
+        [pdfVC setAttributeItemsArray:_attributeItemsArray];
+        [pdfVC setProductItemsArray:_productItemsArray];
+        [pdfVC setKeyFindingItemsArray:_keyFindingItemsArray];
+
     }
 }
 

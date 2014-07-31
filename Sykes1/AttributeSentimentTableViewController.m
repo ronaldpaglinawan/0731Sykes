@@ -32,10 +32,11 @@
     
     _attributeSentimentArray = [NSArray arrayWithObjects:@"Corporate Image", @"Customer Centricity", @"Multi-Channel", @"Innovation", @"Affordability", @"Social Responsibility", @"Security", nil];
     
-    NSLog(@"chosenItemsArray value at AttributeSentimentViewController: %@", _chosenItemsArray);
-    
     // set itemCounter to 0
     itemCounter = 0;
+
+    _attributeItemsArray = [[NSMutableArray alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,6 +88,8 @@
         // save current cell textLabel value to chosenItemsArray:
         [_chosenItemsArray addObject:cell.textLabel.text];
         
+        [_attributeItemsArray addObject:cell.textLabel.text];
+        
         itemCounter++;
     }
     
@@ -112,6 +115,12 @@
         // open ProductSentimentTableViewController
         ProductSentimentTableViewController *productVC = [segue destinationViewController];
         [productVC setChosenItemsArray:_chosenItemsArray];
+        
+        [productVC setMediaItemsArray:_mediaItemsArray];
+        [productVC setMentionItemsArray:_mentionItemsArray];
+        [productVC setTopicItemsArray:_topicItemsArray];
+        [productVC setAttributeItemsArray:_attributeItemsArray];
+
     }
 }
 

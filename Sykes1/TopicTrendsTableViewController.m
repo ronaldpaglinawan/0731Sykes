@@ -31,19 +31,11 @@
 
     _topicTrendsArray = [NSArray arrayWithObjects:@"Brand Mention", @"Criticism", @"Complaint", @"Gratitude", @"Compliment", @"Marketing", @"Media Relations", @"News", @"Query", @"Review", @"Suggestion", @"Support", nil];
     
-    
-    NSLog(@"chosenItemsArray value at TopicTrends: %@", _chosenItemsArray);
-    
     // set itemCounter to 0
     itemCounter = 0;
-<<<<<<< HEAD
+
+    _topicItemsArray = [[NSMutableArray alloc] init];
     
-    _chosenItemsArray = [[NSMutableArray alloc] init];
-    _mediaItemsArray = [[NSMutableArray alloc] init];
-    _mentionItemsArray = [[NSMutableArray alloc] init];
-    
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,6 +88,8 @@
         // save current cell textLabel value to chosenItemsArray:
         [_chosenItemsArray addObject:cell.textLabel.text];
         
+        [_topicItemsArray addObject:cell.textLabel.text];
+        
         itemCounter++;
     }
     
@@ -119,6 +113,10 @@
         // open AttributeSentimentTableViewController
         AttributeSentimentTableViewController *attributeVC = [segue destinationViewController];
         [attributeVC setChosenItemsArray:_chosenItemsArray];
+        
+        [attributeVC setMediaItemsArray:_mediaItemsArray];
+        [attributeVC setMentionItemsArray:_mentionItemsArray];
+        [attributeVC setTopicItemsArray:_topicItemsArray];
     }
 }
 

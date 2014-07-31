@@ -14,10 +14,8 @@
 @property (strong, nonatomic) NSArray *mentionTypeArray;
 
 @property (strong, nonatomic) NSMutableArray *chosenItemsArray;
-<<<<<<< HEAD
+
 
 @property (strong, nonatomic) NSMutableArray *mediaItemsArray;
 @property (strong, nonatomic) NSMutableArray *mentionItemsArray;
-=======
->>>>>>> FETCH_HEAD
 @end

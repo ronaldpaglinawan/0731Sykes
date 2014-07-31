@@ -37,10 +37,7 @@
     itemCounter = 0;
     
     _chosenItemsArray = [[NSMutableArray alloc] init];
-<<<<<<< HEAD
     _mediaItemsArray = [[NSMutableArray alloc] init];
-=======
->>>>>>> FETCH_HEAD
 
 }
 
@@ -96,11 +93,9 @@
         
         // save current cell textLabel value to chosenItemsArray:
         [_chosenItemsArray addObject:cell.textLabel.text];
-<<<<<<< HEAD
+
         
         [_mediaItemsArray addObject:cell.textLabel.text];
-=======
->>>>>>> FETCH_HEAD
         
         itemCounter++;
 
@@ -127,6 +122,7 @@
         // open MentionTypeViewController
         MentionTypeTableViewController *mentionVC = [segue destinationViewController];
         [mentionVC setChosenItemsArray:_chosenItemsArray];
+        [mentionVC setMediaItemsArray:_mediaItemsArray];
     }
 }
 

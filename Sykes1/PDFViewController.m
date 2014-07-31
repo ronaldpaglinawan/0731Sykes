@@ -28,6 +28,14 @@
     [super viewDidLoad];
     
     NSLog(@"chosenItemsArray value at PDFViewController: %@", _chosenItemsArray);
+    NSLog(@"mediaItems: %@", _mediaItemsArray);
+    NSLog(@"mentionItems: %@", _mentionItemsArray);
+    NSLog(@"topicItems: %@", _topicItemsArray);
+    NSLog(@"attributeItems: %@", _attributeItemsArray);
+    NSLog(@"productItems: %@", _productItemsArray);
+    NSLog(@"keyItems: %@", _keyFindingItemsArray);
+
+
     
     [self generatePDF];
     
@@ -93,31 +101,235 @@
     // draw the device id label
     NSString* uniqueIdentifierLabel = [[NSString alloc] initWithFormat:@"UDID: \n%@", [[[UIDevice currentDevice] identifierForVendor] UUIDString]]; // IOS 6+
    [uniqueIdentifierLabel drawInRect:CGRectMake(20, 15, 150, 50) withAttributes:nil];
-    NSLog(@"UDID:: %@", uniqueIdentifierLabel);
+    NSLog(@"%@", uniqueIdentifierLabel);
     
     
     // draw the titleLabel
     NSString *titleLabel = @"Research Type Inquiry";
     [titleLabel drawInRect:CGRectMake(240, 125, 700, 700) withAttributes:nil];  // x, y, width, height
     
-    // draw the userPreferencesLabel
-    NSString *userPreferencesLabel = @"User Preferences:";
-    [userPreferencesLabel drawInRect:CGRectMake(250, 190, 700, 700) withAttributes:nil];  // x, y, width, height
     
     
-    float yPos = 220;
-    // trial print all contents in array
-    for (id object in _chosenItemsArray)
+    // draw the serviceSelectedLabel
+    NSString *serviceSelectedLabel = @"Service                                                              Selected Service";
+    [serviceSelectedLabel drawInRect:CGRectMake(70, 240, 1000, 100) withAttributes:nil];
+    
+    
+    
+    // draw the MediaTypeLabel
+    NSString *mediaTypeLabel = @"Media Type";
+    [mediaTypeLabel drawInRect:CGRectMake(50, 260, 700, 700) withAttributes:nil];
+
+    
+    
+    // print all contents of _mediaItemsArray
+
+    NSString *mediaStartString = [[NSString alloc] init];
+
+    for (id object in _mediaItemsArray)
     {
-        NSLog(@"%@", object);
+        NSMutableString *itemStrings = object;
+
+        if (![itemStrings isEqualToString:@""])
+        {
+            
+            
+            if (itemStrings == [_mediaItemsArray lastObject])
+            {
+                // don't print ','
+                mediaStartString = [mediaStartString stringByAppendingString:itemStrings];
+            }
+            
+            else
+            {
+                mediaStartString = [mediaStartString stringByAppendingString:itemStrings];
+                mediaStartString = [mediaStartString stringByAppendingString:@", "];
+            }
+        }
         
-        NSString *itemString = object;
-        [itemString drawInRect:CGRectMake(260, yPos, 200, 100) withAttributes:nil];
-        
-        // increment yPos by 15
-        yPos += 15;
-        
+        [mediaStartString drawInRect:CGRectMake(200, 260, 2000, 1000) withAttributes:nil];
     }
+    
+    
+    
+    // draw the MentionTypeLabel
+    NSString *mentionTypeLabel = @"Mention Type";
+    [mentionTypeLabel drawInRect:CGRectMake(50, 280, 700, 700) withAttributes:nil];
+    
+    
+    
+    // print all contents of _mentionItemsArray
+    NSString *mentionStartString = [[NSString alloc] init];
+    
+    for (id object in _mentionItemsArray)
+    {
+        NSMutableString *itemStrings = object;
+        
+        if (![itemStrings isEqualToString:@""])
+        {
+            
+            
+            if (itemStrings == [_mentionItemsArray lastObject])
+            {
+                // don't print ','
+                mentionStartString = [mentionStartString stringByAppendingString:itemStrings];
+            }
+            
+            else
+            {
+                mentionStartString = [mentionStartString stringByAppendingString:itemStrings];
+                mentionStartString = [mentionStartString stringByAppendingString:@", "];
+            }
+        }
+        
+        [mentionStartString drawInRect:CGRectMake(200, 280, 2000, 1000) withAttributes:nil];
+    }
+
+    
+    
+    
+    // draw the topicTrendsLabel
+    NSString *topicTrendsLabel = @"Topic Trends";
+    [topicTrendsLabel drawInRect:CGRectMake(50, 300, 700, 700) withAttributes:nil];
+    
+    
+    
+    // print all contents of _topicItemsArray
+    NSString *topicStartString = [[NSString alloc] init];
+    
+    for (id object in _topicItemsArray)
+    {
+        NSMutableString *itemStrings = object;
+        
+        if (![itemStrings isEqualToString:@""])
+        {
+            
+            
+            if (itemStrings == [_topicItemsArray lastObject])
+            {
+                // don't print ','
+                topicStartString = [topicStartString stringByAppendingString:itemStrings];
+            }
+            
+            else
+            {
+                topicStartString = [topicStartString stringByAppendingString:itemStrings];
+                topicStartString = [topicStartString stringByAppendingString:@", "];
+            }
+        }
+        
+        [topicStartString drawInRect:CGRectMake(200, 300, 2000, 1000) withAttributes:nil];
+    }
+    
+    
+    
+    // draw the attributeLabel
+    NSString *attributeLabel = @"Attribute Sentiment";
+    [attributeLabel drawInRect:CGRectMake(50, 320, 700, 700) withAttributes:nil];
+    
+    
+    
+    // print all contents of _attributeItemsArray
+    NSString *attributeStartString = [[NSString alloc] init];
+    
+    for (id object in _attributeItemsArray)
+    {
+        NSMutableString *itemStrings = object;
+        
+        if (![itemStrings isEqualToString:@""])
+        {
+            
+            
+            if (itemStrings == [_attributeItemsArray lastObject])
+            {
+                // don't print ','
+                attributeStartString = [attributeStartString stringByAppendingString:itemStrings];
+            }
+            
+            else
+            {
+                attributeStartString = [attributeStartString stringByAppendingString:itemStrings];
+                attributeStartString = [attributeStartString stringByAppendingString:@", "];
+            }
+        }
+        
+        [attributeStartString drawInRect:CGRectMake(200, 320, 2000, 1000) withAttributes:nil];
+    }
+    
+    
+    
+    // draw the productLabel
+    NSString *productLabel = @"Product Sentiment";
+    [productLabel drawInRect:CGRectMake(50, 340, 700, 700) withAttributes:nil];
+    
+    
+    
+    // print all contents of productItemsArray
+    NSString *productStartString = [[NSString alloc] init];
+    
+    for (id object in _productItemsArray)
+    {
+        NSMutableString *itemStrings = object;
+        
+        if (![itemStrings isEqualToString:@""])
+        {
+            
+            
+            if (itemStrings == [_productItemsArray lastObject])
+            {
+                // don't print ','
+                productStartString = [productStartString stringByAppendingString:itemStrings];
+            }
+            
+            else
+            {
+                productStartString = [productStartString stringByAppendingString:itemStrings];
+                productStartString = [productStartString stringByAppendingString:@", "];
+            }
+        }
+        
+        [productStartString drawInRect:CGRectMake(200, 340, 2000, 1000) withAttributes:nil];
+    }
+    
+    
+    
+    // draw the keyLabel
+    NSString *keyLabel = @"Key Findings";
+    [keyLabel drawInRect:CGRectMake(50, 360, 700, 700) withAttributes:nil];
+    
+    
+    
+    // print all contents of keyFindingItemsArray
+    NSString *keyStartString = [[NSString alloc] init];
+    
+    for (id object in _keyFindingItemsArray)
+    {
+        NSMutableString *itemStrings = object;
+        
+        if (![itemStrings isEqualToString:@""])
+        {
+            
+            
+            if (itemStrings == [_keyFindingItemsArray lastObject])
+            {
+                // don't print ','
+                keyStartString = [keyStartString stringByAppendingString:itemStrings];
+            }
+            
+            else
+            {
+                keyStartString = [keyStartString stringByAppendingString:itemStrings];
+                keyStartString = [keyStartString stringByAppendingString:@", "];
+            }
+        }
+        
+        [keyStartString drawInRect:CGRectMake(200, 360, 2000, 1000) withAttributes:nil];
+    }
+
+
+  
+    
+    
     
     
     // draw companyDetailsLabel
@@ -125,11 +337,7 @@
     [companyDetailsLabel drawInRect:CGRectMake(250, 660, 700, 700) withAttributes:nil];
     
     
-    
-    
-    
-    
-    
+    // finish drawing the PDF file
     UIGraphicsEndPDFContext();
     
     

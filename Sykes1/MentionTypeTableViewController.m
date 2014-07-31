@@ -34,17 +34,10 @@
     
     _mentionTypeArray = [NSArray arrayWithObjects:@"Brand Mention", @"Criticism",@"Complain", @"Gratitude", @"Compliment", @"Marketing", @"Media Relations", @"News", @"Query", @"Review", @"Suggestion", @"Support", nil];
     
-    NSLog(@"chosenItemsArray value at MentionType: %@", _chosenItemsArray);
-    
     // set itemCounter to 0
     itemCounter = 0;
-<<<<<<< HEAD
-    
-    _chosenItemsArray = [[NSMutableArray alloc] init];
-    _mediaItemsArray = [[NSMutableArray alloc] init];
+
     _mentionItemsArray = [[NSMutableArray alloc] init];
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,6 +90,8 @@
         // save current cell textLabel value to chosenItemsArray:
         [_chosenItemsArray addObject:cell.textLabel.text];
         
+        [_mentionItemsArray addObject:cell.textLabel.text];
+        
         itemCounter++;
     }
     
@@ -121,6 +116,9 @@
         // open TopicTrendsTableViewController
         TopicTrendsTableViewController *topicVC = [segue destinationViewController];
         [topicVC setChosenItemsArray:_chosenItemsArray];
+        
+        [topicVC setMediaItemsArray:_mediaItemsArray];
+        [topicVC setMentionItemsArray:_mentionItemsArray];
     }
 }
 
