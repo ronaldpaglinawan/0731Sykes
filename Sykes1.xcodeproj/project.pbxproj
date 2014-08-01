@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3B60DFE01987297E00CD5CC9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B60DFDF1987297E00CD5CC9 /* MessageUI.framework */; };
 		3BA17C6D19873CB800139D7D /* PDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA17C6C19873CB800139D7D /* PDFViewController.m */; };
+		692C4D671989F5EE008333E8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692C4D661989F5EE008333E8 /* SearchViewController.m */; };
+		692C4D6A1989F780008333E8 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692C4D691989F780008333E8 /* HomePageViewController.m */; };
 		693CE1B91980E625008A471A /* Quotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 693CE1B81980E625008A471A /* Quotation.m */; };
 		696360621980F5C600CF6A88 /* MediaTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696360611980F5C600CF6A88 /* MediaTypeTableViewController.m */; };
 		696360651980F5D200CF6A88 /* MentionTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696360641980F5D200CF6A88 /* MentionTypeTableViewController.m */; };
@@ -53,6 +55,10 @@
 		3B60DFDF1987297E00CD5CC9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3BA17C6B19873CB800139D7D /* PDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFViewController.h; sourceTree = "<group>"; };
 		3BA17C6C19873CB800139D7D /* PDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewController.m; sourceTree = "<group>"; };
+		692C4D651989F5EE008333E8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		692C4D661989F5EE008333E8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		692C4D681989F780008333E8 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		692C4D691989F780008333E8 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		693CE1B71980E625008A471A /* Quotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quotation.h; sourceTree = "<group>"; };
 		693CE1B81980E625008A471A /* Quotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quotation.m; sourceTree = "<group>"; };
 		696360601980F5C600CF6A88 /* MediaTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTypeTableViewController.h; sourceTree = "<group>"; };
@@ -135,8 +141,12 @@
 			children = (
 				6963604D1980F17100CF6A88 /* Services View Controller */,
 				6977010D1980AD3A001C6B22 /* main.storyboard */,
+				692C4D681989F780008333E8 /* HomePageViewController.h */,
+				692C4D691989F780008333E8 /* HomePageViewController.m */,
 				697700ED1980AD20001C6B22 /* BNFAppDelegate.h */,
 				697700EE1980AD20001C6B22 /* BNFAppDelegate.m */,
+				692C4D651989F5EE008333E8 /* SearchViewController.h */,
+				692C4D661989F5EE008333E8 /* SearchViewController.m */,
 				6977010F1980AD58001C6B22 /* QuotationViewController.h */,
 				697701101980AD58001C6B22 /* QuotationViewController.m */,
 				697701121980AE9B001C6B22 /* ReadMoreViewController.h */,
@@ -347,8 +357,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				696360621980F5C600CF6A88 /* MediaTypeTableViewController.m in Sources */,
+				692C4D671989F5EE008333E8 /* SearchViewController.m in Sources */,
 				697700EB1980AD20001C6B22 /* main.m in Sources */,
 				696360711980F5F900CF6A88 /* KeyFindingsTableViewController.m in Sources */,
+				692C4D6A1989F780008333E8 /* HomePageViewController.m in Sources */,
 				6963606B1980F5E600CF6A88 /* AttributeSentimentTableViewController.m in Sources */,
 				6963606E1980F5F000CF6A88 /* ProductSentimentTableViewController.m in Sources */,
 				696360681980F5DC00CF6A88 /* TopicTrendsTableViewController.m in Sources */,
